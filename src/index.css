@@ -286,3 +286,13 @@ input[value]{
 input:-internal-autofill-selected{
   background-color: transparent !important;
 }
+.titleService{
+  position: relative;
+}
+.titleService::before{
+  position: absolute;
+content: '';
+width: 2.59px;
+height: 50px;
+background: #1972F5;
+}

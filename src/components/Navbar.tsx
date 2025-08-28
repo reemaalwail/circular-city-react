@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Link as RouterLink } from "react-router-dom";
 
 export default function Navbar() {
     const { t } = useTranslation();
@@ -26,9 +27,9 @@ export default function Navbar() {
             <a href="#" className="text-gray-800 hover:text-blue-600">
               {t('navbar.text3')}
             </a>
-            <a href="#" className="text-gray-800 hover:text-blue-600">
+            <RouterLink  to={`/${localStorage.getItem('i18nextLng')}/ourServices`}  className="text-gray-800 hover:text-blue-600">
              {t('navbar.text4')}
-            </a>
+            </RouterLink>
             <a href="#" className="text-gray-800 hover:text-blue-600">
              {t('navbar.text5')}
             </a>

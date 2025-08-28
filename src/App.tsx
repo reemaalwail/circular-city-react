@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import LoadingScreen from './loadingScreen';
 import LanguageHandler from "./components/LanguageHandler";
+import OurServices from './pages/ourServices.tsx';
 
 
 
@@ -34,7 +35,8 @@ function App() {
 />
 
           <Route path="/:lang" element={loading ? <LoadingScreen /> : <><LanguageHandler /><Home /></>} />
-    
+           <Route path="/:lang/ourServices" element={loading ? <LoadingScreen /> : <><OurServices /></>} />
+
         </Routes>
       </Router>
       <div className="iconForma flex justify-center items-center"><i className="fa-solid fa-file-circle-question text-white text-[18px]"></i></div>
