@@ -12,6 +12,9 @@ a{
   cursor: pointer;
   color: inherit;
 }
+a:hover{
+  color: inherit;
+}
 .pointer{
   cursor: pointer !important;
 }
@@ -295,4 +298,37 @@ content: '';
 width: 2.59px;
 height: 50px;
 background: #1972F5;
+}
+.item{
+  color:#ffffffc0;
+}
+.titleLine1,.titleLine2,.titleLine3{
+  position: relative;
+}
+.titleLine1::before{
+  position: absolute;
+  bottom:0;
+  content: '';
+  background: red;
+  border: 5px solid #FF0000;
+  height: 111.27326202392578px;
+  margin-left: -30px;
+}
+.titleLine2::before{
+  position: absolute;
+  bottom:0;
+  content: '';
+  background: #2A5BCA;
+  border: 5px solid #2A5BCA;
+  height: 111.27326202392578px;
+  margin-left: -30px;
+}
+.titleLine3::before{
+  position: absolute;
+  bottom:0;
+  content: '';
+  background: #268B43;
+  border: 5px solid #268B43;
+  height: 111.27326202392578px;
+  margin-left: -30px;
 }

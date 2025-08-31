@@ -7,11 +7,10 @@ const LanguageHandler = () => {
   const { lang } = useParams();
 
   useEffect(() => {
-    if (lang && ['ar', 'en', 'ku', 'de'].includes(lang)) {
+    if (lang && ['ar', 'en'].includes(lang)) {
       i18n.changeLanguage(lang);
       localStorage.setItem('i18nextLng', lang);
       document.documentElement.lang = lang;
-      document.documentElement.dir = lang === 'ar' || lang === 'ku' ? 'rtl' : 'ltr';
     }
   }, [lang, i18n]);
 

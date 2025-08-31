@@ -1,10 +1,10 @@
 
 import  Form  from "../components/Form";
-import  ContactForm  from "../components/ContactForm";
+import  ContactForm  from "../components/contactForm";
 const Home = () => {
   return(
   <>
-  <div className={localStorage.getItem('i18nextLng') === 'ku'?'ku':''}>
+  <div>
      <Form/>
      <ContactForm/>
     </div>

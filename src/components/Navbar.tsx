@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { Link as RouterLink } from "react-router-dom";
 
 export default function Navbar() {
-    const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
   return (
     <header className="bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -10,7 +10,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img
-              src="./assets/logo1.png" 
+              src="../assets/logo1.png" 
               alt="Circular City"
               className="h-10 w-auto"
             />
@@ -18,21 +18,21 @@ export default function Navbar() {
 
           {/* Menu */}
           <nav className="hidden md:flex space-x-8">
-            <a href="#" className="text-blue-600 font-medium">
+            <RouterLink  to={`/${i18n.language}`}  className="text-blue-600 font-medium">
               {t('navbar.text1')}
-            </a>
-            <a href="#" className="text-gray-800 hover:text-blue-600">
+            </RouterLink>
+            <RouterLink  to={`/${i18n.language}/aboutUs`}  className="text-gray-800 hover:text-blue-600">
               {t('navbar.text2')}
-            </a>
-            <a href="#" className="text-gray-800 hover:text-blue-600">
+            </RouterLink>
+            <RouterLink  to={`/${i18n.language}/ourProjects`}   className="text-gray-800 hover:text-blue-600">
               {t('navbar.text3')}
-            </a>
-            <RouterLink  to={`/${localStorage.getItem('i18nextLng')}/ourServices`}  className="text-gray-800 hover:text-blue-600">
+            </RouterLink>
+            <RouterLink  to={`/${i18n.language}/ourServices`} className="text-gray-800 hover:text-blue-600">
              {t('navbar.text4')}
             </RouterLink>
-            <a href="#" className="text-gray-800 hover:text-blue-600">
+            <RouterLink  to={`/${i18n.language}/ourPartners`}  className="text-gray-800 hover:text-blue-600">
              {t('navbar.text5')}
-            </a>
+            </RouterLink>
           </nav>
         </div>
       </div>

@@ -38,7 +38,6 @@ export default function KYCForm() {
       [name]: value,
     }));
 
-    // تأكد من التحقق باستخدام القيمة الجديدة بدل formData القديمة
     const updatedForm = { ...formData, [name]: value };
 
     const isEmpty =
