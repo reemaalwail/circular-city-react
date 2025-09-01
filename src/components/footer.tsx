@@ -21,13 +21,13 @@ export default function SiteFooter() {
                   <RouterLink to={`/${i18n.language}/ourServices`}  className="text-[12.4px] item">
                     {t('footer.text2')}
                   </RouterLink>
-                  <RouterLink to={`/${i18n.language}/aboutUs`}  className="text-[12.4px] item">
+                  <RouterLink to={`/${i18n.language}/`}  className="text-[12.4px] item">
                     {t('footer.text3')}
                   </RouterLink>
                   <RouterLink to={`/${i18n.language}/ourProjects`}  className="item text-[12.4px] ">
                     {t('footer.text4')}
                   </RouterLink>
-                  <RouterLink to={`/${i18n.language}/ourPartners`}  className="text-[12.4px] item">
+                  <RouterLink  to={`/${i18n.language}/ourPartners`}   className="text-[12.4px] item">
                     {t('footer.text5')}
                   </RouterLink>
                   <RouterLink to={`/${i18n.language}/contactUs`}  className="text-[12.4px] item">

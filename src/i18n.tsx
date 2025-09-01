@@ -53,6 +53,22 @@ const resources = {
         text8:"What Do We Do",
         text9:"How Do We Help",
         text10:"Create success story"
+      },
+      partners:{
+        text1:"Collaborations",
+        text2:"Our",
+        text3:"Partners",
+        text4:"See More"
+      },
+      service:{
+        text1:"HVAC Solutions",
+        text2:"We supply ceiling diffusers, dampers, and integrated fire‑and‑smoke systems to guarantee optimal air distribution and precise control over temperature and indoor air quality.",
+        text3:"FM200 & CO₂ Gas Suppression Systems",
+        text4:"We deliver advanced suppression solutions using FM200 and CO₂ gases, engineered for fast, safe discharge while preserving the integrity of your equipment and infrastructure.",
+        text5:"Integrated Fire Protection Solutions",
+        text6:"We provide all types of fire sprinklers, control valves, fittings, and accessories to ensure complete and effective fire protection in residential, commercial, and industrial buildings",
+        text7:"Custom MEP Design & Installation",
+        text8:"Our team of certified engineers carries out bespoke electrical and mechanical works to the highest international standards, with meticulous attention to detail for uninterrupted"
       }
     }
   },
