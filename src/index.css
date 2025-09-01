@@ -10,10 +10,9 @@ padding-left: 0px !important;
 }
 a{
   cursor: pointer;
+  color: initial;
 }
-a:hover{
-  color: inherit;
-}
+
 .pointer{
   cursor: pointer !important;
 }

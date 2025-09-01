@@ -61,6 +61,7 @@ const resources = {
         text4:"See More"
       },
       service:{
+        text0:"Our services",
         text1:"HVAC Solutions",
         text2:"We supply ceiling diffusers, dampers, and integrated fire‑and‑smoke systems to guarantee optimal air distribution and precise control over temperature and indoor air quality.",
         text3:"FM200 & CO₂ Gas Suppression Systems",
@@ -69,6 +70,14 @@ const resources = {
         text6:"We provide all types of fire sprinklers, control valves, fittings, and accessories to ensure complete and effective fire protection in residential, commercial, and industrial buildings",
         text7:"Custom MEP Design & Installation",
         text8:"Our team of certified engineers carries out bespoke electrical and mechanical works to the highest international standards, with meticulous attention to detail for uninterrupted"
+      },
+      milestonesGrowth:{
+        text1:"Milestones & Growth",
+        text2:"Company established in Baghdad, Iraq ",
+        text3:"Expanded service portfolio to include FM200 and CO₂ gas systems",
+        text4:"Secured exclusive regional agencies with Rapidrop (UK) and Castle Engineering (EG)",
+        text5:"Surpassed 200 completed projects across residential, commercial, and industrial sectors ",
+        text6:"Reinforced our motto “Our reputation is the pride of our descendants” by continuously aligning with global standards and elevating client satisfaction  "
       }
     }
   },

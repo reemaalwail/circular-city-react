@@ -18,19 +18,19 @@ export default function Navbar() {
 
           {/* Menu */}
           <nav className="hidden md:flex space-x-8">
-            <RouterLink  to={`/${i18n.language}`}  className="text-blue-600 font-medium">
+            <RouterLink  to={`/${i18n.language}`}  className="text-[#242424]  text-[10.86px]">
               {t('navbar.text1')}
             </RouterLink>
-            <RouterLink  to={`/${i18n.language}/aboutUs`}  className="text-gray-800 hover:text-blue-600">
+            <RouterLink  to={`/${i18n.language}/aboutUs`}  className="text-[#242424] text-[10.86px]">
               {t('navbar.text2')}
             </RouterLink>
-            <RouterLink  to={`/${i18n.language}/ourProjects`}   className="text-gray-800 hover:text-blue-600">
+            <RouterLink  to={`/${i18n.language}/ourProjects`}   className="text-[#242424] text-[10.86px]">
               {t('navbar.text3')}
             </RouterLink>
-            <RouterLink  to={`/${i18n.language}/ourServices`} className="text-gray-800 hover:text-blue-600">
+            <RouterLink  to={`/${i18n.language}/ourServices`} className="text-[#242424] text-[10.86px]">
              {t('navbar.text4')}
             </RouterLink>
-            <RouterLink  to={`/${i18n.language}/`}  className="text-gray-800 hover:text-blue-600">
+            <RouterLink  to={`/${i18n.language}/`}  className="text-[#242424] text-[10.86px]">
              {t('navbar.text5')}
             </RouterLink>
           </nav>
