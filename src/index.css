@@ -1,10 +1,33 @@
 @import "tailwindcss";
 
-/* @font-face {
-  font-family: "font";
-  src: url('../assets/fonts/ArbFONTS-FFShamelFamily-SansOneBold.ttf');
-} */
-
+@font-face {
+  font-family: "fontJokkerBold";
+  src: url('../public/assets/fonts/Jokker/Jokker-Bold.otf');
+}
+@font-face {
+  font-family: "fontJokkerMedium";
+  src: url('../public/assets/fonts/Jokker/Jokker-Medium.otf');
+}
+@font-face {
+  font-family: "fontJokkerLight";
+  src: url('../public/assets/fonts/Jokker/Jokker-Light.otf');
+}
+@font-face {
+  font-family: "fontInter";
+  src: url('../public/assets/fonts/Jokker/Inter_18pt-Medium.ttf');
+}
+.fontInter{
+  font-family: "fontInter";
+}
+.fontJokkerMedium {
+  font-family: "fontJokkerMedium";
+}
+.fontJokkerBold{
+font-family: "fontJokkerBold";
+}
+.fontJokkerLight{
+  font-family: "fontJokkerLight";
+}
 #contact .ltr ul{
 padding-left: 0px !important;
 }
@@ -21,25 +44,6 @@ a:hover{
 }
 .disabled{
   pointer-events: none
-}
-.antaRegularCotent{
-  font-family:"antaRegularCotent";
-}
-.antaRegular{
-  font-family: 'antaRegular';
-}
-
-.fontRegular {
-  font-family: "fontRegular";
-  font-weight: 400;
-}
-
-.font {
-  font-family: "font";
-}
-
-.fontlighter {
-  font-family: "fontRegularFFShamelFamily";
 }
 
 *:lang(ku) .fontRegular {
