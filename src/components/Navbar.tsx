@@ -30,7 +30,7 @@ export default function Navbar() {
             <RouterLink  to={`/${i18n.language}/ourServices`} className="text-[#242424] text-[10.86px]">
              {t('navbar.text4')}
             </RouterLink>
-            <RouterLink  to={`/${i18n.language}/`}  className="text-[#242424] text-[10.86px]">
+            <RouterLink  to={`/${i18n.language}/contactUs`}  className="text-[#242424] text-[10.86px]">
              {t('navbar.text5')}
             </RouterLink>
           </nav>

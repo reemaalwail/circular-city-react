@@ -1,17 +1,28 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import ContactUs from "./pages/contactUs";
 const resources = {
 
   en: {
     translation: {
       changeLanguage: "english",
       validText:"This field is required",
+       more:"More",
+       seeAll:"see all",
       navbar:{
         text1:"Home",
         text2:"About",
         text3:"Projects",
         text4:"Our services",
         text5:"Contact us"
+      },
+      header:{
+        text1:"circular city",
+        text2:"Fire fighting systems ",
+        text3:"and equipment",
+        text4:"Delivering Turnkey MEP & Fire Protection Since 2006",
+        text5:"Contact us",
+        text6:"Learn more"
       },
       footer:{
         text1:"About",
@@ -25,22 +36,26 @@ const resources = {
         text9:"Customer service"
       },
       form:{
-        text1:"To make things easier for both of us, please fill out the Google Form below with the required materials or quantities, so we can get back to you with the right offer  ",
-        text2:"How did you find us ?",
+        text1:" Say something to start a live chat!",
+        text2:"Select Subject?",
         text3:"Iraq - Baghdad - Mansour - 14 Ramadan Street",
-        text4:"KYC Form",
-        text5:"Project Name and location",
-        text6:"Company Name",
-        text7:"Address",
-        text8:"Email or phone number",
-        text9:"Beneficial Entity ",
-        text10:"Email or phone number",
-        text11:"Kindly provide us with the bill of quantities or the list of required materials",
-        text12:'If you have few items to request please list it here and if you upload the BOQ, please type "uploaded"',
+        text4:"Contact Information",
+        text5:"First Name",
+        text6:"Last Name",
+        text7:"Email",
+        text8:"Phone Number",
+        text9:"Message",
+        text10:"Send Message",
+        text11:"Sent",
+        text12:'Select Subject?',
         text13:"Send",
         text14:"Social Media",
         text15:"Family and Friend",
         text16:"Other"
+      },
+      contactUs:{
+        text1:"Contact Us",
+        text2:"Any question or remarks? Just write us a message!"
       },
       about:{
         text1:"Reputation enhancement",
@@ -77,8 +92,31 @@ const resources = {
         text3:"Expanded service portfolio to include FM200 and CO₂ gas systems",
         text4:"Secured exclusive regional agencies with Rapidrop (UK) and Castle Engineering (EG)",
         text5:"Surpassed 200 completed projects across residential, commercial, and industrial sectors ",
-        text6:"Reinforced our motto “Our reputation is the pride of our descendants” by continuously aligning with global standards and elevating client satisfaction  "
-      }
+        text6:"Reinforced our motto “Our reputation is the pride of our descendants” by continuously aligning with global standards and elevating client satisfaction  ",
+        text7:"Company founding",
+        text8:"Service expansion",
+        text9:"Exclusive partnerships",
+        text10:"200+ projects",
+        text11:"Reputation enhancement"
+      },
+      discoverDifference:{
+        text1:"Discover the difference"
+      },
+      whoweare: {
+        text1: "WHO WE ARE",
+        text2: "Delivering Turnkey MEP & Fire Protection Since 2006",
+        text3: "We specialize in end-to-end mechanical, electrical & plumbing (MEP) and fire safety systems across Iraq. Our certified engineers combine deep expertise with international best practices to deliver solutions you can trust.",
+        text4: "Comprehensive Fire Protection",
+        text5: "Automated sprinklers, FM200 & CO₂ gas systems, foam suppression — fully compliant and rigorously tested.",
+        text6: "Bespoke MEP Design & Installation.",
+        text7: "Precision electrical and mechanical works, engineered for peak performance and uninterrupted operation."
+      },
+      news:{
+        text1:"Latest News"
+      },
+     ourProjects:{
+      text1:"Our projects"
+     }
     }
   },
   ar: {
@@ -97,4 +135,4 @@ i18n.use(initReactI18next).init({
     escapeValue: false,
   },
 });
-export default i18n;
+

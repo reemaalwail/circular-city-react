@@ -11,7 +11,7 @@ return (
     <div className=" bg-[#2A5BCA] pt-[15px] pb-[15px] rounded-[8px]">
       <div className="flex flex-col lg:flex-row md:flex-row  items-center justify-evenly">
 
-        <div className="cardService flex items-center justify-center bg-[#ffff] h-[185px] rounded-[6px] w-[251.78px] p-[12px]">
+        <div className="cardService mb-[10px] lg:mb-[0px] md:mb-[10px] flex items-center justify-center bg-[#ffff] h-[185px] rounded-[6px] w-[251.78px] p-[12px]">
           <div className="flex flex-col items-center text-center justify-center">
             <img src="../assets/icon3.png" alt="image" className="w-[35px] h-[100%] bg-cover" />
             <div className="text-[14px] text-[#2C3847] font-bold mt-[10px]">
@@ -22,7 +22,7 @@ return (
             </div>
           </div>
         </div>
-        <div className="cardService flex items-center justify-center bg-[#ffff] h-[185px] rounded-[6px] w-[251.78px] p-[12px]">
+        <div className="cardService  mb-[10px] lg:mb-[0px] md:mb-[10px] flex items-center justify-center bg-[#ffff] h-[185px] rounded-[6px] w-[251.78px] p-[12px]">
           <div className="flex flex-col items-center text-center justify-center">
             <img src="../assets/icon4.png" alt="image" className="w-[35px] h-[100%] bg-cover" />
             <div className="text-[14px] text-[#2C3847] font-bold mt-[10px]">
@@ -33,7 +33,7 @@ return (
             </div>
           </div>
         </div>
-        <div className="cardService flex items-center justify-center bg-[#ffff] h-[185px] rounded-[6px] w-[251.78px] p-[12px]">
+        <div className="cardService  mb-[10px] lg:mb-[0px] md:mb-[10px] flex items-center justify-center bg-[#ffff] h-[185px] rounded-[6px] w-[251.78px] p-[12px]">
           <div className="flex flex-col items-center text-center justify-center">
             <img src="../assets/icon5.png" alt="image" className="w-[35px] h-[100%] bg-cover" />
             <div className="text-[14px] text-[#2C3847] font-bold mt-[10px]">
@@ -44,7 +44,7 @@ return (
             </div>
           </div>
         </div>
-        <div className="cardService flex items-center justify-center bg-[#ffff] h-[185px] rounded-[6px] w-[251.78px] p-[12px]">
+        <div className="cardService  mb-[10px] lg:mb-[0px] md:mb-[10px] flex items-center justify-center bg-[#ffff] h-[185px] rounded-[6px] w-[251.78px] p-[12px]">
           <div className="flex flex-col items-center text-center justify-center">
             <img src="../assets/icon6.png" alt="image" className="w-[35px] h-[100%] bg-cover" />
             <div className="text-[14px] text-[#2C3847] font-bold mt-[10px]">

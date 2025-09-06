@@ -19,16 +19,18 @@ export default function OurProjects() {
   const countLoadding = raw || 4;
 
   useEffect(() => {
-    fetch("https://press.fayadev.net/api/pages/15/31")
+    fetch("https://press.fayadev.net/api/pages/15/45")
       .then((r) => (r.ok ? r.json() : Promise.reject(`HTTP ${r.status}`)))
       .then((json: ApiRes) => {
         const data = json?.data ?? [];
+           console.log(data)
         setItems(data) 
+       
       })
       .catch((e) => setErr(String(e)))
       .finally(() => setLoading(false));
   }, []);
-  
+
 
   return (
     <section className="relative mx-auto max-w-6xl px-4 py-12 sm:py-16 ltr">

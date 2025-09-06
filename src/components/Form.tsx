@@ -1,306 +1,270 @@
 import { useTranslation } from "react-i18next";
-import {useState} from "react";
+import { useState } from "react";
 import axios from "axios";
 
 export default function KYCForm() {
-  const { t } = useTranslation();
+const { t } = useTranslation();
 
-  const [formData, setFormData] = useState({
-    projectName:'',
-    companyName:'',
-    address:'',
-    contact1:'',
-    beneficiary:'',
-    contact2:'',
-    foundUs: "Social Media",
-    boq:'',
-    request:'',
+const [formData,setFormData] = useState({
+Fname: '',
+Lname:'',
+email:'',
+Nphone:'',
+message:'',
+subject:''
+});
+const [loading, setLoading] = useState(false);
+const [disabledButton, setDisabledButton] = useState(true);
+const [validFields, setValidFields] = useState({
+Fname: true,
+Lname:true,
+email:true,
+Nphone:true,
+message:true,
+subject:true
+});
+const handleChange = (
+e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+  const { name, value } = e.target;
+
+  setFormData((prev) => ({
+  ...prev,
+  [name]: value,
+  }));
+
+  const updatedForm = { ...formData, [name]: value };
+
+  const isEmpty =
+  !updatedForm.Fname.trim()
+
+  setDisabledButton(isEmpty);
+
+  setValidFields({
+  Fname: !!updatedForm.Fname.trim(),
+  Lname: !!updatedForm.Lname.trim(),
+  email: !!updatedForm.Lname.trim(),
+  Nphone: !!updatedForm.Lname.trim(),
+  message: !!updatedForm.Lname.trim(),
+  subject: !!updatedForm.Lname.trim(),
+  });
+  };
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setLoading(true);
+
+  try {
+  await axios.post("https://press.fayadev.net/api/contact/form/15", {
+  15: formData.Fname,
   });
 
-  const [loading, setLoading] = useState(false);
-  const [disabledButtom, setDisabled] = useState('disabled');
-  const [vaildProjectName , setVaildProjectName] = useState('vaild');
-  const [vaildCompanyName , setVaildCompanyName] = useState('vaild');
-  const [vaildAddress , setVaildAddress] = useState('vaild');
-  const [vaildContact1 , setVaildContact1] = useState('vaild');
-  const [vaildBeneficiary , setVaildBeneficiary] = useState('vaild');
-  const [vaildMessage , setVaildMessage] = useState('vaild');
-  
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-  const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+  setFormData({
+  Fname: "",
+  Lname:"",
+  email:"",
+  Nphone:"",
+  message:"",
+  subject:""
+  });
 
-  if(formData.projectName == "" || formData.companyName == "" || formData.address == "" || formData.contact1 == "" || formData.beneficiary == "" || formData.request == "") {
-    setDisabled("disabled");
-    setVaildProjectName("");
-    setVaildCompanyName("");
-    setVaildAddress("")
-    setVaildContact1("")
-    setVaildBeneficiary("")
-    setVaildMessage("")
-    }else {
-     setDisabled("");
-     setVaildProjectName("vaild");
-     setVaildCompanyName("vaild")
-     setVaildAddress("vaild")
-     setVaildContact1("vaild")
-     setVaildBeneficiary("vaild")
-     setVaildMessage("vaild")
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      await axios.post("https://press.fayadev.net/api/contact/form/15", {
-        15: formData.projectName,
-        13: formData.companyName
-    });
-      setFormData({
-        projectName: "",
-        companyName: "",
-        address: "",
-        contact1: "",
-        beneficiary: "",
-        contact2: "",
-        foundUs: "Social Media",
-        boq: "",
-        request: "",
-      });
-    } catch (err) {
-      alert(err);
-    } finally {
-      setLoading(false);
-    }
+  setDisabledButton(true);
+  } catch (err) {
+  alert(err);
+  } finally {
+  setLoading(false);
+  }
   };
 
   return (
-    <div className=" container">
-    <div className={`${localStorage.getItem('i18nextLng') === 'ar'?'rtl':'ltr' } flex flex-col lg:flex-row md:flex-row bg-white rounded-xl shadow-lg overflow-hidden p-[10px]`}>
-      {/* Left Info */}
-      <div className="cardInfo bg-[#2A5BCA] text-white p-8 md:w-1/3 flex flex-col justify-between rounded-[8.34px]">
-        <div className="z-[2]">
+  <div className="w-[100%]">
+    <div className="container">
+      <div className=" bg-[#fff] flex flex-row justify-between rounded-[6.55px] w-[100%] p-[5px]">
+        {/* Left Info */}
+        <div className="cardInfo overflow-hidden bg-[#2A5BCA] w-[40%] h-[400px] rounded-[6.55px] p-[15px] m-[5px]">
+          <div className="flex flex-col">
+            <div className="text-[18.35px] text-[#FFFFFF] font-semibold">{t('form.text4')}</div>
+            <div className="text-[11.79px] text-[#C9C9C9] font-normal">{t('form.text1')}</div>
 
-          <div className="text-2xl font-bold mb-4">
-            {t('form.text4')}
-          </div>
+            <div className="mt-[20%] space-y-4">
 
-          <div className="mb-6 text-[15.01px] leading-relaxed text-[#C9C9C9] capitalize">
-            {t('form.text1')}
-          </div>
-          <br/>
+              <div className="flex items-center gap-3 cursor-pointer">
+                <div><i className="fa-solid fa-phone-volume text-[14px] text-[#FFFFFF]"></i></div>
+                <div className="text-[10.48px] text-[#FFFFFF] font-normal">+964 077 1234 456</div>
+              </div>
 
-          <div className="space-y-4">
-            <div className="flex items-start gap-3">
-             <i className="fa-solid fa-phone-volume text-[14px] text-[#FFFFFF]"></i> +964 077 1234 456
-            </div>
-            <div className="flex items-start gap-3">
-             <i className="fa-solid fa-envelope  text-[14px] text-[#FFFFFF]"></i>  info@gmail.com
-            </div>
-            <div className="flex items-start gap-3">
-            <i className="fa-solid fa-location-dot text-[14px] text-[#FFFFFF]"></i>
-            {t('form.text3')}
+              <div className="flex items-center gap-3 cursor-pointer">
+                <div><i className="fa-solid fa-envelope text-[14px] text-[#FFFFFF]"></i></div>
+                <div className="text-[10.48px] text-[#FFFFFF] font-normal">info@gmail.com</div>
+              </div>
+
+              <div className="flex items-center gap-3 cursor-pointer">
+                <div><i className="fa-solid fa-location-dot text-[14px] text-[#FFFFFF]"></i></div>
+                <div className="text-[10.48px] text-[#FFFFFF] font-normal">
+                  Iraq - Baghdad - Mansour - 14 Ramadan Street
+                </div>
+              </div>
+
             </div>
 
           </div>
         </div>
-
-        <div className="flex gap-4 mt-6 z-[2]">
-          <a href="#" className="bg-white text-[#1C50C4] p-2 rounded-full w-[26.76px] h-[26.76px] flex items-center justify-center">
-             <i className="fa-brands fa-facebook-f text-[#1C50C4] text-[13.43px]"></i>
-          </a>
-          <a href="#" className="bg-white text-[#1C50C4] p-2 rounded-full w-[26.76px] h-[26.76px] flex items-center justify-center">
-             <i className="fa-brands fa-instagram text-[#1C50C4] text-[13.43px]"></i>
-          </a>
-          <a href="#" className="bg-white text-[#1C50C4] p-2 rounded-full w-[26.76px] h-[26.76px] flex items-center justify-center">
-             <i className="fa-brands fa-linkedin text-[#1C50C4] text-[13.43px]"></i>
-          </a>
+        {/* Right Form */}
+        <div className="bg-[#FFFFFF] w-[60%] p-[10px] m-[5px]">
+          <form onSubmit={handleSubmit}>
+            <div className="flex flex-row justify-between space-x-[10px] mt-[15px] mb-[15px]">
+              {/* first name */}
+              <div className="relative w-full ltr">
+                <input type="text" name="Fname" value={formData.Fname} onChange={handleChange} id="Fname" placeholder=''
+                  className="peer block w-full bg-transparent outline-none
+          border-b-[1px]  border-[#8D8D8D]
+          py-3 text-[14px] text-gray-700 
+          focus:border-gray-800
+          transition" required />
+                <label htmlFor="Fname" className="pointer-events-none absolute left-0
+          text-gray-400 bg-transparent
+          transition-all duration-200 text-[14px]
+          top-1/2 -translate-y-1/2 text-base
+          peer-focus:-top-0.5 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-[#2A5BCA]
+          peer-[:not(:placeholder-shown)]:-top-0.5 peer-[:not(:placeholder-shown)]:translate-y-0
+          peer-[:not(:placeholder-shown)]:text-[12px]">
+                  {t('form.text5')}
+                </label>
+                {!validFields.Fname && (
+                <div className={`text-[10px] text-[#ffbaba] font-bold ${ localStorage.getItem("i18nextLng")==="ar"
+                  ? "ltr" : "rtl" }`}>
+                  {t("validText")}
+                </div>
+                )}
+              </div>
+              {/* Last Name */}
+              <div className="relative w-full ltr">
+                <input type="text" name="Lname" value={formData.Lname} onChange={handleChange} id="Lname" placeholder=''
+                  className="peer block w-full bg-transparent outline-none
+          border-b-[1px]  border-[#8D8D8D]
+          py-3 text-[14px] text-gray-700
+          focus:border-gray-800
+          transition" required />
+                <label htmlFor="Lname" className="pointer-events-none absolute left-0
+          text-gray-400 bg-transparent
+          transition-all duration-200 text-[14px]
+          top-1/2 -translate-y-1/2 text-base
+          peer-focus:-top-0.5 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-[#2A5BCA]
+          peer-[:not(:placeholder-shown)]:-top-0.5 peer-[:not(:placeholder-shown)]:translate-y-0
+          peer-[:not(:placeholder-shown)]:text-[12px]">
+                  {t('form.text6')}
+                </label>
+                {!validFields.Lname && (
+                <div className={`text-[10px] text-[#ffbaba] font-bold ${ localStorage.getItem("i18nextLng")==="ar"
+                  ? "ltr" : "rtl" }`}>
+                  {t("validText")}
+                </div>
+                )}
+              </div>
+              
+            </div>
+            <div className="flex flex-row justify-between space-x-[10px] mt-[15px] mb-[15px]">
+              {/* email */}
+              <div className="relative w-full ltr">
+                <input type="text" name="email" value={formData.email} onChange={handleChange} id="email" placeholder=''
+                  className="peer block w-full bg-transparent outline-none
+          border-b-[1px]  border-[#8D8D8D]
+          py-3 text-[14px] text-gray-700
+          focus:border-gray-800
+          transition" required />
+                <label htmlFor="email" className="pointer-events-none absolute left-0
+          text-gray-400 bg-transparent
+          transition-all duration-200 text-[14px]
+          top-1/2 -translate-y-1/2 text-base
+          peer-focus:-top-0.5 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-[#2A5BCA]
+          peer-[:not(:placeholder-shown)]:-top-0.5 peer-[:not(:placeholder-shown)]:translate-y-0
+          peer-[:not(:placeholder-shown)]:text-[12px]">
+                  {t('form.text7')}
+                </label>
+                {!validFields.email && (
+                <div className={`text-[10px] text-[#ffbaba] font-bold ${ localStorage.getItem("i18nextLng")==="ar"
+                  ? "ltr" : "rtl" }`}>
+                  {t("validText")}
+                </div>
+                )}
+              </div>
+              {/* Nphone */}
+              <div className="relative w-full ltr">
+                <input type="text" name="Nphone" value={formData.Nphone} onChange={handleChange} id="Nphone" placeholder=''
+                  className="peer block w-full bg-transparent outline-none
+          border-b-[1px]  border-[#8D8D8D]
+          py-3 text-[14px] text-gray-700
+          focus:border-gray-800
+          transition" required />
+                <label htmlFor="Nphone" className="pointer-events-none absolute left-0
+          text-gray-400 bg-transparent
+          transition-all duration-200 text-[14px]
+          top-1/2 -translate-y-1/2 text-base
+          peer-focus:-top-0.5 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-[#2A5BCA]
+          peer-[:not(:placeholder-shown)]:-top-0.5 peer-[:not(:placeholder-shown)]:translate-y-0
+          peer-[:not(:placeholder-shown)]:text-[12px]">
+                  {t('form.text8')}
+                </label>
+                {!validFields.Nphone && (
+                <div className={`text-[10px] text-[#ffbaba] font-bold ${ localStorage.getItem("i18nextLng")==="ar"
+                  ? "ltr" : "rtl" }`}>
+                  {t("validText")}
+                </div>
+                )}
+              </div>
+            </div>
+            <div className="relative w-full ltr mt-[15px] mb-[15px]">
+              <div className="mb-3 text-[14px] font-semibold leading-none text-[#268B43]">
+           {t('form.text12')}
+              </div>
+              <div className="flex flex-row">
+                <label className=" flex flex-row cursor-pointer select-none items-center" style={{ display: "flex" }}>
+      <input type="radio" name="subject" defaultChecked className="peer sr-only"/>
+      <span className="relative grid h-8 w-8 place-items-center">
+        <span className="block size-4 rounded-full bg-[#e2e3e6] peer-checked:hidden" />
+        <span className="hidden size-[8.52px] items-center justify-center rounded-full bg-[#21b86b] text-white peer-checked:flex">
+          <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor">
+            <path d="M20 6 9 17l-5-5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
+      </span>
+      <span className="text-[14px] font-medium leading-none text-[#2A5BCA]">test</span>
+    </label>
+              </div>
+            </div>
+<div className="relative w-full ltr mt-[15px] mb-[15px]">
+                <textarea   rows={1} name="message" value={formData.message} onChange={handleChange} id="message" placeholder=''
+                  className="peer block w-full bg-transparent outline-none
+          border-b-[1px]  border-[#8D8D8D]
+          py-3 text-[14px] text-gray-700
+          focus:border-gray-800
+          transition" required />
+                <label htmlFor="message" className="pointer-events-none absolute left-0
+          text-gray-400 bg-transparent
+          transition-all duration-200 text-[14px]
+          top-1/2 -translate-y-1/2 text-base
+          peer-focus:-top-0.5 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-[#2A5BCA]
+          peer-[:not(:placeholder-shown)]:-top-0.5 peer-[:not(:placeholder-shown)]:translate-y-0
+          peer-[:not(:placeholder-shown)]:text-[12px]">
+                  {t('form.text9')}
+                </label>
+                {!validFields.message && (
+                <div className={`text-[10px] text-[#ffbaba] font-bold ${ localStorage.getItem("i18nextLng")==="ar"
+                  ? "ltr" : "rtl" }`}>
+                  {t("validText")}
+                </div>
+                )}
+              </div>
+            {/* Submit */}
+            <div className="col-span-2 flex justify-end mt-[10px]">
+              <button type="submit" disabled={loading || disabledButton}
+                className="buttonForm flex items-center justify-center w-auto pl-[10px] pr-[10px] h-[35.38px] py-3 bg-[#268B43] rounded-[3.28px] hover:bg-[#268b43cd] transition pointer">
+                <div className="text-[12px] font-semibold text-white">{loading ? t('form.text11') : t('form.text10')}</div>
+              </button>
+            </div>
+          </form>
         </div>
-
       </div>
-
-      {/* Right Form */}
-      <form
-        onSubmit={handleSubmit}
-        className={`${localStorage.getItem('i18nextLng') === 'ar'?'rtl':'ltr' } relative p-8 md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6`}>
-          <div className="closeForm rounded-[100%] flex items-center justify-center">
-            <i className="fa-solid fa-xmark text-[#8D8D8D]"></i>
-          </div>
-
-        <div className={localStorage.getItem("i18nextLng") === 'ar'? "form-floating rtl" : "form-floating ltr"}>
-        <input
-        type="text"
-        name="projectName"
-        value={formData.projectName}
-        onChange={handleChange}
-        placeholder={t('form.text5')}
-        className="form-control p-2 outline-none text-[16px] text-[#8D8D8D] capitalize"
-        required/>
-        <label htmlFor="floatingTextarea" className="text-[#6c757d] text-[16px]">
-        {t('form.text5')}
-        </label>
-        <div className={`text-[10px] text-[#ffbaba] font-bold ${localStorage.getItem("i18nextLng") === 'ar' ?'ltr':'rtl'} ${vaildProjectName}`} >{t('validText')}</div>
-        </div>
-
-        <div className={localStorage.getItem("i18nextLng") === 'ar'? "form-floating rtl" : "form-floating ltr"}>
-        <input
-        type="text"
-        name="companyName"
-        value={formData.companyName}
-        onChange={handleChange}
-        placeholder={t('form.text6')}
-        className="form-control p-2 outline-none text-[16px] text-[#8D8D8D] capitalize"
-        required/>
-        <label htmlFor="floatingTextarea" className="text-[#6c757d] text-[16px]">
-        {t('form.text6')}
-        </label>
-        <div className={`text-[10px] text-[#ffbaba] font-bold ${localStorage.getItem("i18nextLng") === 'ar' ?'ltr':'rtl'} ${vaildCompanyName}`} >{t('validText')}</div>
-        </div>
-
-        <div className={localStorage.getItem("i18nextLng") === 'ar'? "form-floating rtl" : "form-floating ltr"}>
-        <input
-        type="text"
-        name="address"
-        value={formData.address}
-        onChange={handleChange}
-        placeholder={t('form.text7')}
-        className="form-control p-2 outline-none text-[16px] text-[#8D8D8D] capitalize"
-        required/>
-        <label htmlFor="floatingTextarea" className="text-[#6c757d] text-[16px]">
-        {t('form.text7')}
-        </label>
-        <div className={`text-[10px] text-[#ffbaba] font-bold ${localStorage.getItem("i18nextLng") === 'ar' ?'ltr':'rtl'} ${vaildAddress}`} >{t('validText')}</div>
-        </div>
-
-        <div className={localStorage.getItem("i18nextLng") === 'ar'? "form-floating rtl" : "form-floating ltr"}>
-        <input
-        type="text"
-        name="contact1"
-        value={formData.contact1}
-        onChange={handleChange}
-        placeholder={t('form.text8')}
-        className="form-control p-2 outline-none text-[16px] text-[#8D8D8D] capitalize"
-        required/>
-        <label htmlFor="floatingTextarea" className="text-[#6c757d] text-[16px]">
-        {t('form.text8')}
-        </label>
-        <div className={`text-[10px] text-[#ffbaba] font-bold ${localStorage.getItem("i18nextLng") === 'ar' ?'ltr':'rtl'} ${vaildContact1}`} >{t('validText')}</div>
-        </div>
-
-        <div className={localStorage.getItem("i18nextLng") === 'ar'? "form-floating rtl" : "form-floating ltr"}>
-        <input
-        type="text"
-        name="beneficiary"
-        value={formData.beneficiary}
-        onChange={handleChange}
-        placeholder={t('form.text9')}
-        className="form-control p-2 outline-none text-[16px] text-[#8D8D8D] capitalize"
-        required/>
-        <label htmlFor="floatingTextarea" className="text-[#6c757d] text-[16px]">
-        {t('form.text9')}
-        </label>
-        <div className={`text-[10px] text-[#ffbaba] font-bold ${localStorage.getItem("i18nextLng") === 'ar' ?'ltr':'rtl'} ${vaildBeneficiary}`} >{t('validText')}</div>
-        </div>
-
-
-        {/* Radio Buttons */}
-        <div className="col-span-2">
-          <div className="text-green-700 font-semibold mb-2">
-            {t('form.text2')}
-          </div>
-          <div className="flex gap-6">
-        
-              <label className="flex items-center gap-2 text-[#2A5BCA]">
-
-                <input
-                  type="radio"
-                  name="foundUs"
-                  value={t('form.text14')}
-                  onChange={handleChange}
-                />
-                <span className="text-[#2A5BCA] text-[16.7px] ml-[8px]">{t('form.text14')}</span>
-              </label>
-              
-              <label className="flex items-center gap-2 text-[#2A5BCA]">
-                <input
-                  type="radio"
-                  name="foundUs"
-                  value={t('form.text15')}
-                  onChange={handleChange}
-                />
-                <span className="text-[#2A5BCA] text-[16.7px] ml-[8px]">{t('form.text15')}</span>
-              </label>
-              
-              <label className="flex items-center gap-2 text-[#2A5BCA]">
-                <input
-                  type="radio"
-                  name="foundUs"
-                  value={t('form.text16')}
-                  onChange={handleChange}
-                />
-                <span className="text-[#2A5BCA] text-[16.7px] ml-[8px]">{t('form.text16')}</span>
-              </label>
-
-          </div>
-        </div>
-
-        <div>
-        <div className="text-[16px] text-[#8D8D8D] capitalize">
-          {t('form.text11')}
-        </div>
-
-        <br/>
-
-          <div className="grid justify-center items-center align-middle w-[33px] h-[31px] pointer">
-          <div className=" w-[33px] h-[31px] grid-area pointer justify-center items-center align-middle"><input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" /></div>
-          <div className=" w-[33px] h-[31px] grid-area pointer justify-center items-center align-middle">
-          <div className="w-[33px] h-[31px] rounded-[6px] border-[#C9C9C9] border-[1px] flex items-center justify-center pointer">
-            <i className="fa-solid fa-file-arrow-up text-[#C9C9C9] pointer"></i>
-            </div>
-          </div>
-
-        </div>
-       </div>
-
-
-<div className={localStorage.getItem("i18nextLng") === 'ar' ?  "form-floating rtl" : "form-floating ltr"}>
-    <textarea
-    name="request"
-    cols={20}
-    onChange={handleChange}
-    value={formData.request}
-    id="floatingTextarea"
-    placeholder={t('form.text12')} 
-    className="form-control border-b outline-none  text-[16px] text-[#8D8D8D] capitalize"
-    >
-    </textarea>
-      <label htmlFor="floatingTextarea" className="text-[#6c757d] text-[16px]">
-      { t('form.text12') }
-      </label>
-       <div className={`text-[10px] text-[#ffbaba] font-bold ${localStorage.getItem("i18nextLng") === 'ar'?'ltr':'rtl'}+ ${vaildMessage}`} >{t('validText')}</div>
-
-</div>
-
-
-
-
-        <div className="col-span-2 flex justify-end">
-          <button
-  type="submit"
-   disabled={loading}
-            className={`buttonForm flex items-center justify-center text-[16px] font w-[114.03px] py-3 bg-[#268B43] text-white rounded-[15px] hover:bg-[#268b43cd] transition pointer" + ${disabledButtom}`}
-          >
-            {loading ? "Sending..." : "Send"}
-          </button>
-        </div>
-      </form>
-
     </div>
-    </div>
+  </div>
   );
-}
+  }

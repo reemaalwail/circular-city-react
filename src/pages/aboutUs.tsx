@@ -10,7 +10,7 @@ type ApiResponse = {
   data: aboutUs[];
 };
 export default function AboutUs() {
- const { i18n, t } = useTranslation();
+ const {  t } = useTranslation();
   const [AboutUs, setAboutUs] = useState<aboutUs[]>([]);
   const [loading, setLoading] = useState(true);
   const raw = localStorage.getItem("AboutUsDataLength");

@@ -12,6 +12,9 @@ a{
   cursor: pointer;
   color: initial;
 }
+a:hover{
+    color: initial;
+}
 
 .pointer{
   cursor: pointer !important;
@@ -61,7 +64,8 @@ body{
   margin: 0;
   transition: all 0.6s ease-in-out;
   font-weight: 400;
-  background: #ffffff;
+  /* background:url(../public/assets/bg1.png) repeat-y;
+  background-size: cover; */
   direction: rtl;
 }
 .ltr{
@@ -161,40 +165,6 @@ font-size: 14px !important;
     display: flex !important;
     align-items: center;
 }
-
-
-
-.ar.input .form-floating>.form-control-plaintext~label, 
-.ar.input .form-floating>.form-control:focus~label, 
-.ar.input .form-floating>.form-control:not(:placeholder-shown)~label, 
-.ar.input .form-floating>.form-select~label {
-    opacity: .4;
-    transform: scale(.90) translateY(-.5rem) translateX(0px) !important;
-}
-.en.input .form-floating>.form-control-plaintext~label, 
-.en.input .form-floating>.form-control:focus~label, 
-.en.input .form-floating>.form-control:not(:placeholder-shown)~label, 
-.en.input .form-floating>.form-select~label {
-    opacity: .4;
-    transform: scale(.90) translateY(-.5rem) translateX(0px) !important;
-}
-
-.ar.message .form-floating>.form-control-plaintext~label,
-.ar.message .form-floating>.form-control:focus~label, 
-.ar.message .form-floating>.form-control:not(:placeholder-shown)~label,
-.ar.message .form-floating>.form-select~label {
-    opacity: .4;
-    transform: scale(.90) translateY(-.5rem) translateX(0px) !important;
-}
-
-.en.message .form-floating>.form-control-plaintext~label,
-.en.message .form-floating>.form-control:focus~label, 
-.en.message .form-floating>.form-control:not(:placeholder-shown)~label,
-.en.message .form-floating>.form-select~label {
-    opacity: .4;
-    transform: scale(.90) translateY(-.5rem) translateX(0px) !important;
-}
-
 
 
 .buttonForm.disabled{
@@ -330,3 +300,56 @@ background: #1972F5;
   height: 111.27326202392578px;
   margin-left: -30px;
 }
+.sectionAbout{
+  position: relative;
+}
+.sectionAbout::after{
+  content:'';
+  position: absolute;
+  left: 0;
+  bottom:0;
+  width:6.99px;
+  height:90%;
+  background: #2A5BCA;
+}
+.sectionAbout::before{
+  content:'';
+  position: absolute;
+  right: 0;
+  top:0;
+  width:6.99px;
+  height:90%;
+  background: #2A5BCA;
+  z-index: 1;
+}
+
+.cardSlide { 
+   width: 250px;
+   height: 400px;
+   transform-origin: left center;
+  transition: transform 0.6s ease-in-out;
+  }
+.cardSlide:hover { 
+  width:400px;
+  transform: scaleX(1);
+  transition: transform 0.6s ease-in-out;
+ }
+ .cardSlide:hover .img-cardSlide img{ 
+   transform:scale(1.1);
+   transition: all 0.6s ease-in-out;
+ }
+.description {
+    opacity: 0; 
+    transition: all 0.6s ease-in-out;
+    max-height: 0; 
+    overflow: hidden; 
+  }
+.cardSlide:hover .description { 
+  opacity: 1; 
+  max-height: 120px; 
+  transition: all 0.6s ease-in-out;
+}
+.gradient-bg {
+    background: linear-gradient(#0000 30%, #2A5BCA 0%);
+}
+
