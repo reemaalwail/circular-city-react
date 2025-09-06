@@ -1,4 +1,3 @@
-// src/components/OurServices.tsx
 import { useEffect, useState } from "react";
 
 type Item = {
@@ -28,11 +27,12 @@ export default function OurServices() {
   if (err) return <div className="p-6 text-red-600">Error: {err}</div>;
 
   return (
+     <div className="home">
     <section className="mx-auto p-[5%] ltr">
-      <div className="text-[40px] font-medium text-black">
-        Our <span className="text-[#2A5BCA]">services</span>
+      <div className="text-[40px] fontJokkerMedium text-black">
+        Our <span className="text-[#2A5BCA] fontJokkerBold">services</span>
       </div>
-      <div className="max-w-3xl text-[16.67px] text-[#64717C] mb-[4%] mt-[10px]">
+      <div className="fontJokkerMedium max-w-3xl text-[16.67px] text-[#64717C] mb-[4%] mt-[10px]">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       </div>
       
@@ -46,10 +46,10 @@ export default function OurServices() {
             <div key={i} className="flex items-start gap-3 mt-[15px]">
               <span className="mt-1 h-[47px] w-[2.59px] rounded bg-[#2A5BCA]" />
               <div>
-                <div className="text-[40px] font-extrabold uppercase tracking-wide text-[#2A5BCA]">
+                <div className="fontJokkerBold text-[40px] uppercase tracking-wide text-[#2A5BCA]">
                   {title}
                 </div>
-                <div className="mt-3 max-w-3xl text-[16.67px] leading-7 text-[#64717C]">
+                <div className="fontJokkerMedium mt-3 max-w-3xl text-[16px] leading-7 text-[#64717C]">
                   {desc}
                 </div>
               </div>
@@ -58,5 +58,6 @@ export default function OurServices() {
         })}
       </div>
     </section>
+    </div>
   );
 }

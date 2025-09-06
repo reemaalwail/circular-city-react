@@ -30,7 +30,8 @@
     "reveal.js": "^5.1.0",
     "router-link": "^0.0.4",
     "slick-carousel": "^1.8.1",
-    "spectacle": "^10.1.8"
+    "spectacle": "^10.1.8",
+    "use-location-state": "^3.1.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

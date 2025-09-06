@@ -26,15 +26,15 @@ export default function PartnersSection() {
               {t('header.text4')}
             </div>
             <div className="flex flex-row mt-[5%]">
-                 <RouterLink to={`/${i18n.language}/aboutUs`} className="fontInter text-[9.96px] flex items-center justify-center rounded-[8px] w-[80px] h-[40px] bg-[#268B43] text-white m-[10px]">{t('header.text6')}</RouterLink>
-                 <RouterLink to="" className="fontInter flex items-center justify-center rounded-[8px] w-[80px] h-[40px] border-[#268B43] border-[2px] text-[#268B43] m-[10px]">
-                     <div className=" text-[9.96px] text-[#268B43]">{t('header.text5')}</div>
+                 <RouterLink to={`/${i18n.language}/aboutUs`} className="fontInter text-[9.96px] flex items-center justify-center rounded-[6.01px] w-[80px] h-[40px] bg-[#268B43] text-white m-[10px]">{t('header.text6')}</RouterLink>
+                 <RouterLink to="" className="fontInter flex items-center justify-center rounded-[6.01px] w-[80px] h-[40px] border-[#268B43] border-[1.5px] text-[#268B43] m-[10px]">
+                     <div className="text-[9.96px] text-[#268B43]">{t('header.text5')}</div>
                   </RouterLink>
             </div>
           </div>
 
-          <div>
-              <img src="../assets/img1.png" alt="image" className="w-[90%] h-[100%] bg-cover" />
+          <div className="w-[100%] flex items-center justify-center">
+              <img src="../assets/img1.png" alt="image" className="w-[60%] lg:w-[90%] md:w-[90%] h-[100%] bg-cover" />
           </div>
 
         </div>

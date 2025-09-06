@@ -1,6 +1,5 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import ContactUs from "./pages/contactUs";
 const resources = {
 
   en: {
@@ -9,6 +8,7 @@ const resources = {
       validText:"This field is required",
        more:"More",
        seeAll:"see all",
+       seeMore:"see more",
       navbar:{
         text1:"Home",
         text2:"About",

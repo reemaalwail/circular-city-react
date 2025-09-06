@@ -33,13 +33,14 @@ export default function OurProjects() {
 
 
   return (
+    <div className="home">
     <section className="relative mx-auto max-w-6xl px-4 py-12 sm:py-16 ltr">
-      <div className="mb-1 text-[18.19px] font-bold tracking-[0.3em] text-[#2A5BCA] uppercase">WORK</div>
-      <div className="text-[40px] font-medium text-black sm:text-4xl">
-        Our <span className="text-[#2A5BCA]">Projects</span>
+      <div className="fontJokkerBold mb-1 text-[18.19px] font-bold tracking-[0.3em] text-[#2A5BCA] uppercase">WORK</div>
+      <div className="fontJokkerMedium text-[40px] text-black sm:text-4xl">
+        Our <span className="text-[#2A5BCA] fontJokkerBold">Projects</span>
       </div>
 
-      <div className="mt-4 max-w-4xl text-[16.67px] leading-6 text-[#64717C] mb-[4%] mt-[10px">
+      <div className="fontJokkerMedium mt-4 max-w-4xl text-[16.67px] leading-6 text-[#64717C] mb-[4%] mt-[10px">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
         been the industry's standard dummy text ever since the 1500s…
       </div>
@@ -93,15 +94,16 @@ export default function OurProjects() {
                   </div>
                 )}
 
-                <h3 className="mt-3 line-clamp-2 text-lg font-extrabold leading-snug text-slate-800">
+                <div className="fontJokkerMedium mt-3 line-clamp-2 text-lg font-extrabold leading-snug text-slate-800">
                   {title}
-                </h3>
-                <p className="mt-2 line-clamp-3 text-[13.5px] leading-6 text-slate-600">{desc}</p>
+                </div>
+                <div className="fontJokkerMedium mt-2 line-clamp-3 text-[13.5px] leading-6 text-slate-600">{desc}</div>
               </article>
             );
           })}
         </div>
       )}
     </section>
+    </div>
   );
 }

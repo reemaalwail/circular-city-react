@@ -9,24 +9,23 @@ export default function PartnersSection() {
       <div className="relative mx-auto max-w-7xl py-16 ltr">
         <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
-            <div className=" text-[18.19px] font-bold tracking-[0.3em] text-[#2A5BCA] uppercase">
+            <div className="fontJokkerBold text-[18.19px] tracking-[0.3em] text-[#2A5BCA] uppercase">
               {t('partners.text1')}
             </div>
 
-            <div className="text-[40px] font-medium text-black mb-6">
+            <div className="text-[34px] fontJokkerMedium text-[#000000] mb-6">
                     {t('partners.text2')}
-              <span className="text-[#2A5BCA] ml-[5px] mr-[5px] font-bold">
+              <span className="text-[34px] text-[#2A5BCA] ml-[5px] mr-[5px] fontJokkerBold">
                  {t('partners.text3')}
               </span>
             </div>
 
-            <div className="text-[16px] max-w-2xl  text-black">
+            <div className="text-[16.67px] max-w-2xl  text-[#737373]">
               Lorem Ipsum is simply dummy text of the printing and
               typesetting industry. Lorem Ipsum has been the industry&apos;s,
             </div>
           </div>
 
-          {/* Right: logos + link */}
           <div className="flex w-full flex-col">
             <div className="flex flex-col lg:flex-row md:flex-row w-full items-center justify-start gap-6 lg:justify-end">
               {/* Logo card 1 */}
@@ -45,8 +44,8 @@ export default function PartnersSection() {
 
             {/* See more */}
             <div className="mt-4 flex w-full justify-end">
-              <RouterLink  to={`/${i18n.language}/ourPartners`}  className="text-[15px] font-medium text-[#2E5DC7] underline underline-offset-4 hover:text-blue-700">
-                See More
+              <RouterLink  to={`/${i18n.language}/ourPartners`}> 
+                <div  className="fontJokkerMedium text-[#1A4FC6] text-[15.16px] capitalize font-medium underline">{t('seeMore')}</div>
               </RouterLink>
             </div>
           </div>

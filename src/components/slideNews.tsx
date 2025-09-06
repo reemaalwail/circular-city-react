@@ -57,8 +57,8 @@ export default function PartnersSection() {
 return (
 <section className="relative container">
   <div className="relative mx-auto max-w-7xl ltr">
-    <div className="text-[#1A4FC6] text-[16px] capitalize font-bold mb-[2%]">~ &nbsp; {t('news.text1')}</div>
-    <div className="pt-[15px] pb-[15px] rounded-[8px]">
+    <div className="fontJokkerBold text-[#1A4FC6] text-[18.73px] capitalize mb-[2%]">~ &nbsp; {t('news.text1')}</div>
+    <div className="pt-[15px] pb-[15px] overflow-auto">
       <div className="flex flex-col lg:flex-row md:flex-row  items-center justify-between">
             {loading&& (
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -82,8 +82,8 @@ return (
                     <div className="h-[240px] w-[100%] img-cardSlide overflow-hidden rounded-[10px]">
                         <img  src={it.image} className="w-[100%] h-[240px] object-cover rounded-[10px]"/> 
                     </div>
-                      <div className="text-[20px] font-medium text-black">{it.english_title}</div>
-                      <div className="description text-[14px] font-medium text-[#737373">{it.egnlish_description}</div>
+                      <div className="fontJokkerMedium text-[16px] text-black mt-[10px]">{it.english_title}</div>
+                      <div className="fontJokkerMedium description text-[14px] text-[#737373]">{it.egnlish_description}</div>
              </div>
               </Slider>
 

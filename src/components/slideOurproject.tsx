@@ -57,14 +57,14 @@ export default function PartnersSection() {
 } as const;
 return (
 <section className="relative container">
-  <div className="relative mx-auto max-w-7xl py-16 ltr">
+  <div className="relative mx-auto max-w-7xl  ltr">
           <div className="flex flex-row justify-between items-center">
-<div className="text-[#1A4FC6] text-[16px] capitalize font-bold">~ &nbsp; {t('ourProjects.text1')}</div>
+<div className="fontJokkerBold text-[#1A4FC6] text-[18.73px] capitalize">~ &nbsp; {t('ourProjects.text1')}</div>
 <RouterLink  to={`/${i18n.language}/ourProjects`}> 
-<div  className="text-[#1A4FC6] text-[15.16px] capitalize font-medium underline">{t('seeAll')}</div>
+<div  className="fontJokkerMedium text-[#1A4FC6] text-[15.16px] capitalize font-medium underline">{t('seeAll')}</div>
 </RouterLink>
           </div>
-    <div className="pt-[15px] pb-[15px] rounded-[8px]">
+    <div className="pt-[15px] pb-[15px] overflow-auto">
       <div className="flex flex-col lg:flex-row md:flex-row  items-center justify-between">
             {loading&& (
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -88,8 +88,8 @@ return (
                     <div className="h-[240px] w-[100%] img-cardSlide overflow-hidden rounded-[10px]">
                         <img  src={it.image} className="w-[100%] h-[240px] object-cover rounded-[10px]"/> 
                     </div>
-                      <div className="text-[20px] font-medium text-black">{it.english_title}</div>
-                      <div className="description text-[14px] font-medium text-[#737373">{it.egnlish_description}</div>
+                      <div className="fontJokkerMedium text-[16px] text-black mt-[10px]">{it.english_title}</div>
+                      <div className="fontJokkerMedium description text-[14px]  text-[#737373] mt-[10px]">{it.egnlish_description}</div>
              </div>
               </Slider>
 
