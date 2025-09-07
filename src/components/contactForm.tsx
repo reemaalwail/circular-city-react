@@ -232,7 +232,7 @@ e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
               </div>
             </div>
             <div className="relative w-full ltr mt-[15px] mb-[15px]">
-              <div className="mb-3 text-[14px] font-semibold leading-none text-[#268B43]">
+              <div className="mb-3 text-[14px] fontPoppinsSemiBold leading-none text-[#268B43]">
            {t('form.text12')}
               </div>
               <div className="flex flex-row">
