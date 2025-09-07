@@ -76,32 +76,32 @@ e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   };
 
   return (
-  <div className="w-[100%]">
+  <div className="w-[100%] bg-[#fff] ">
     <div className="container">
       <div className="bg-[#fff] flex flex-row justify-center rounded-[6.55px] w-[100%] p-[5px]">
         {/* Left Info */}
         <div className="cardInfo overflow-hidden bg-[#2A5BCA] w-[35%] h-[400px] rounded-[6.55px] p-[20px] m-[5px]">
           <div className="flex flex-col justify-between h-[100%]">
             <div>
-            <div className="text-[18.35px] text-[#FFFFFF] font-semibold">{t('form.text4')}</div>
-            <div className="text-[11.79px] text-[#C9C9C9] font-normal">{t('form.text1')}</div>
+            <div className="text-[18.35px] text-[#FFFFFF] fontPoppinsSemiBold">{t('form.text4')}</div>
+            <div className="fontPoppinsRegular text-[11.79px] text-[#C9C9C9]">{t('form.text1')}</div>
             </div>
 
             <div className="space-y-4">
 
               <div className="flex items-center gap-3 cursor-pointer">
                 <div><i className="fa-solid fa-phone-volume text-[14px] text-[#FFFFFF]"></i></div>
-                <div className="text-[10.48px] text-[#FFFFFF] font-normal">+964 077 1234 456</div>
+                <div className="fontPoppinsRegular text-[10.48px] text-[#FFFFFF]">+964 077 1234 456</div>
               </div>
 
               <div className="flex items-center gap-3 cursor-pointer">
                 <div><i className="fa-solid fa-envelope text-[14px] text-[#FFFFFF]"></i></div>
-                <div className="text-[10.48px] text-[#FFFFFF] font-normal">info@gmail.com</div>
+                <div className="fontPoppinsRegular text-[10.48px] text-[#FFFFFF]">info@gmail.com</div>
               </div>
 
               <div className="flex items-center gap-3 cursor-pointer">
                 <div><i className="fa-solid fa-location-dot text-[14px] text-[#FFFFFF]"></i></div>
-                <div className="text-[10.48px] text-[#FFFFFF] font-normal">
+                <div className="text-[10.48px] text-[#FFFFFF] fontPoppinsRegular">
                   Iraq - Baghdad - Mansour - 14 Ramadan Street
                 </div>
               </div>
@@ -135,14 +135,14 @@ e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
               <div className="relative w-full ltr">
                 <input type="text" name="Fname" value={formData.Fname} onChange={handleChange} id="Fname" placeholder=''
                   className="peer block w-full bg-transparent outline-none
-          border-b-[1px]  border-[#8D8D8D]
-          py-3 text-[14px] text-gray-700 
+          border-b-[1px]  border-[#8D8D8D] fontPoppinsMedium
+          py-3 text-[12px] text-gray-700 
           focus:border-gray-800
           transition" required />
                 <label htmlFor="Fname" className="pointer-events-none absolute left-0
           text-gray-400 bg-transparent
-          transition-all duration-200 text-[14px]
-          top-1/2 -translate-y-1/2 text-base
+          transition-all duration-200 text-[12px]
+          top-1/2 -translate-y-1/2 text-base fontPoppinsMedium
           peer-focus:-top-0.5 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-[#2A5BCA]
           peer-[:not(:placeholder-shown)]:-top-0.5 peer-[:not(:placeholder-shown)]:translate-y-0
           peer-[:not(:placeholder-shown)]:text-[12px]">
@@ -160,13 +160,13 @@ e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
                 <input type="text" name="Lname" value={formData.Lname} onChange={handleChange} id="Lname" placeholder=''
                   className="peer block w-full bg-transparent outline-none
           border-b-[1px]  border-[#8D8D8D]
-          py-3 text-[14px] text-gray-700
+          py-3 text-[12px] text-gray-700 fontPoppinsMedium
           focus:border-gray-800
           transition" required />
                 <label htmlFor="Lname" className="pointer-events-none absolute left-0
           text-gray-400 bg-transparent
-          transition-all duration-200 text-[14px]
-          top-1/2 -translate-y-1/2 text-base
+          transition-all duration-200 text-[12px]
+          top-1/2 -translate-y-1/2 text-base fontPoppinsMedium
           peer-focus:-top-0.5 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-[#2A5BCA]
           peer-[:not(:placeholder-shown)]:-top-0.5 peer-[:not(:placeholder-shown)]:translate-y-0
           peer-[:not(:placeholder-shown)]:text-[12px]">
@@ -186,14 +186,14 @@ e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
               <div className="relative w-full ltr">
                 <input type="text" name="email" value={formData.email} onChange={handleChange} id="email" placeholder=''
                   className="peer block w-full bg-transparent outline-none
-          border-b-[1px]  border-[#8D8D8D]
-          py-3 text-[14px] text-gray-700
+          border-b-[1px]  border-[#8D8D8D] fontPoppinsMedium
+          py-3 text-[12px] text-gray-700
           focus:border-gray-800
           transition" required />
                 <label htmlFor="email" className="pointer-events-none absolute left-0
           text-gray-400 bg-transparent
-          transition-all duration-200 text-[14px]
-          top-1/2 -translate-y-1/2 text-base
+          transition-all duration-200 text-[12px]
+          top-1/2 -translate-y-1/2 text-base fontPoppinsMedium
           peer-focus:-top-0.5 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-[#2A5BCA]
           peer-[:not(:placeholder-shown)]:-top-0.5 peer-[:not(:placeholder-shown)]:translate-y-0
           peer-[:not(:placeholder-shown)]:text-[12px]">
@@ -211,13 +211,13 @@ e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
                 <input type="text" name="Nphone" value={formData.Nphone} onChange={handleChange} id="Nphone" placeholder=''
                   className="peer block w-full bg-transparent outline-none
           border-b-[1px]  border-[#8D8D8D]
-          py-3 text-[14px] text-gray-700
+          py-3 text-[12px] text-gray-700 fontPoppinsMedium
           focus:border-gray-800
           transition" required />
                 <label htmlFor="Nphone" className="pointer-events-none absolute left-0
           text-gray-400 bg-transparent
-          transition-all duration-200 text-[14px]
-          top-1/2 -translate-y-1/2 text-base
+          transition-all duration-200 text-[12px]
+          top-1/2 -translate-y-1/2 text-base fontPoppinsMedium
           peer-focus:-top-0.5 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-[#2A5BCA]
           peer-[:not(:placeholder-shown)]:-top-0.5 peer-[:not(:placeholder-shown)]:translate-y-0
           peer-[:not(:placeholder-shown)]:text-[12px]">
@@ -254,13 +254,13 @@ e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
                 <textarea   rows={1} name="message" value={formData.message} onChange={handleChange} id="message" placeholder=''
                   className="peer block w-full bg-transparent outline-none
           border-b-[1px]  border-[#8D8D8D]
-          py-3 text-[14px] text-gray-700
-          focus:border-gray-800
+          py-3 text-[12px] text-gray-700
+          focus:border-gray-800 fontPoppinsMedium
           transition" required />
                 <label htmlFor="message" className="pointer-events-none absolute left-0
           text-gray-400 bg-transparent
-          transition-all duration-200 text-[14px]
-          top-1/2 -translate-y-1/2 text-base
+          transition-all duration-200 text-[12px]
+          top-1/2 -translate-y-1/2 text-base fontPoppinsMedium
           peer-focus:-top-0.5 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-[#2A5BCA]
           peer-[:not(:placeholder-shown)]:-top-0.5 peer-[:not(:placeholder-shown)]:translate-y-0
           peer-[:not(:placeholder-shown)]:text-[12px]">
@@ -276,7 +276,7 @@ e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
             {/* Submit */}
             <div className="col-span-2 flex justify-end mt-[10px]">
               <button type="submit" disabled={loading || disabledButton}
-                className="buttonForm flex items-center justify-center w-auto pl-[10px] pr-[10px] h-[35.38px] py-3 bg-[#268B43] rounded-[3.28px] hover:bg-[#268b43cd] transition pointer">
+                className="buttonForm w-[179.03px]  flex items-center justify-center pl-[10px] pr-[10px] h-[45.01px] py-3 bg-[#268B43] rounded-[4.17px] hover:bg-[#268b43cd] transition pointer">
                 <div className="text-[12px] font-semibold text-white">{loading ? t('form.text11') : t('form.text10')}</div>
               </button>
             </div>
@@ -287,3 +287,5 @@ e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   </div>
   );
   }
+
+  

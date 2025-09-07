@@ -23,7 +23,10 @@
   font-family: "fontInter";
   src: url('../public/assets/fonts/Jokker/Inter_18pt-Medium.ttf');
 }
-
+@font-face {
+  font-family: "fontPoppinsBold";
+  src: url('../public/assets/fonts/Jokker/Poppins-Bold.ttf');
+}
 @font-face {
   font-family: "fontPoppinsSemiBold";
   src: url('../public/assets/fonts/Jokker/Poppins-SemiBold.ttf');
@@ -32,6 +35,7 @@
   font-family: "fontPoppinsRegular";
   src: url('../public/assets/fonts/Jokker/Poppins-Regular.ttf');
 }
+
 @font-face {
   font-family: "fontPoppinsMedium";
   src: url('../public/assets/fonts/Jokker/Poppins-Medium.ttf');
@@ -47,6 +51,9 @@
 @font-face {
   font-family: "fontInterRegular";
   src: url('../public/assets/fonts/Jokker/Inter_18pt-Regular.ttf');
+}
+.fontPoppinsBold{
+  font-family: 'fontPoppinsBold';
 }
 .fontInterRegular{
    font-family: "fontInterRegular" 
